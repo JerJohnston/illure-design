@@ -1,13 +1,25 @@
 body{
-    background-image: url('/img/grunge-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Assistant', sans-serif;
+    background-color: #0d0d0d;
+    font-family: 'Special Elite', cursive;
     font-weight: 300;
     font-size: 100%;
-    line-height: 1.5;
+    line-height: 1;
     color: #f5f5f5;
 }
+
+.grainy-bg{
+    background-color: #2c3540;
+    mix-blend-mode: color-dodge;
+    opacity: 0.8;
+    
+}
+
+.site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
 
 /* header and site navigation styling */
 
@@ -23,6 +35,16 @@ header {
 }
 .logo {
     width: 5rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    display: none;
+    
 }
 
 /* Nav Icon Styling */
@@ -88,19 +110,17 @@ header {
 /* nav menu */
 
 .nav-bar {
-    height: 28vh;
+    
     background-color: #14171a;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 2;
     left: 0;
-    overflow-x: hidden;
+    width: 100vw;
+    max-height: 0;
+    overflow: hidden;
     transition: all 0.5s ease-in-out;
 }
 
 .show-nav {
-    width: 100vw;
+    max-height: 26vh;
 }
 
 .navlinks {
@@ -124,17 +144,22 @@ header {
 
 .hero {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    margin-right: 1rem;
 }
 
+/* heading animation */
+.typewriter {
+    margin-left: 1rem;
+}
 .typewriter h1 {
+    font-size: clamp(1.25rem, 3.5vw, 1.85rem); 
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    letter-spacing: .15rem; /* Adjust as needed */
     animation: 
-      typing 3s steps(40, end),
+      typing 2.5s steps(40, end),
       blink-caret .75s step-end infinite;
   }
 
@@ -143,10 +168,237 @@ header {
     to { width: 100% }
   }
 
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
+/************* Grid Content *************/
+
+.main-content {
+    display: flex;
+    margin: auto;
+    margin-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 12rem;
+}
+.grid-container {
+    margin: auto;
+    max-width: 40rem;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto 1fr;
+    gap: 1rem;
+    transform: rotate(-45deg);
+}
+
+.main-content h2 {
+    font-size: calc(1.1rem + 1.8vw);
+}
+
+.main-content h2:nth-child(1) {
+    grid-column: 1 / 5;
+    text-align: right;
+}
+
+.main-content h2:nth-child(2){
+    color: #eed9c8;
+    writing-mode: vertical-rl;
+    grid-column: 5 / 4;
+    grid-row: 2 / 6;
+    justify-self: end;
+    margin-top: -10px;
+    margin-right: -10px;
+}
+
+
+h1,h2,h3 {
+    text-transform: uppercase;
+}
+
+h3 {
+    border-bottom: solid 3px #f5f5f5;
+    margin: 0
+}
+
+.project-list li {
+    padding: 0.15rem 0;
+    border-bottom: solid 3px #f5f5f5;
+}
+
+.project-list li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.25rem;
+}
+
+.feature-projects {
+    grid-column: 2 / 4;
+    grid-row: 2 / span 2;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    width: 14rem;
+    line-height: 1.2;
+    align-self: end;
+    transform: rotate(45deg);
+    
+}
+
+.line {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    border-bottom: 1.6rem solid rgba(238, 217, 200, 0.95);
+    align-self: start;
+    justify-content: end;
+}
+
+.more-examples {
+    border-bottom: solid 3px #f5f5f5;
+    font-size: 1.25rem;
+    padding: 0.15rem 0;
+    text-decoration: none;
+    color: #f5f5f5;
+    grid-column: 5 / 7;
+    grid-row: 3;
+    align-self: end;
+    transform: rotate(45deg);
+}
+
+.preview-image {
+    grid-column: 6 / 3;
+    grid-row: 7;
+    transform: rotate(45deg);
+    margin-top: 6rem;
+    
+}
+
+.preview-image img {
+    border: 8px solid #f5f5f5;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 1rem
+}
+
+@media(min-width: 500px){
+    h1 {
+        display: block;
+    }
+}
+
+@media(min-width: 900px){
+   .nav-toggle {
+       display: none;
+   }
+   
+   .nav-bar{
+       max-height: 4rem;
+       max-width: 30rem;
+       margin-top: 1.25rem;
+       background-color: transparent;
+   }
+    .navlinks {
+        border: none;
+    }
+
+    .navlinks:last-of-type{
+        border: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .navmenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media(max-width: 900px){
+    .grid-container,
+    .feature-projects,
+    .more-examples {
+        transform: rotate(0deg);
+    }
+}
+
+@media(max-width: 680px){
+
+    .grid-container {
+        width: 66vw;
+    }
+
+    .feature-projects {
+        grid-column: 1 / 4;
+    }
+}
+
+@media(max-width: 550px){
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .grid-container {
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .main-content h2:nth-child(1) {
+        grid-column: 2 / 7;
+        
+    }
+    
+    .main-content h2:nth-child(2){
+        grid-column: 6;
+        grid-row: 2 / 5;
+        margin-right: 0.15rem;
+    }
+
+    .line {
+        grid-row: 5;
+    }
+
+    .feature-projects{
+        grid-column: 1 / 5;
+    }
+
+    .more-examples {
+        grid-column: 1 / 5;
+        grid-row: 4;
+    }
+
+}
+
+@media(max-width: 320px){
+
+    .grid-container {
+        grid-template-rows: 0.25fr 1fr 0.25fr auto 1fr auto;
+    }
+
+    .main-content h2:nth-child(1) {
+        grid-column: 1 / 7;
+        
+        
+    }
+
+    .line {
+        grid-row: 4;
+        margin-top: 0.5rem;
+        
+    }
+
+    .feature-projects {
+        grid-row: 2;
+        grid-column: 1 / 6;
+    }
+
+    .more-examples {
+        grid-row: 3;
+        grid-column: 1 / 6;
+    }
+}
+
+
+
+
   
 
 
