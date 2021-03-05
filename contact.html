@@ -25,7 +25,7 @@
                         <a href="index.html"><img src="img/illure-logo.png" alt="illure-logo"></a>
                     </div> 
                     <div class="typewriter">
-                        <h1>Illure <span class="title-color">Design</span></h1>
+                        <h1>Illure Design</h1>
                     </div>
                 <div class="nav-toggle">
                     <div class="nav-btn"></div>
@@ -40,30 +40,35 @@
                 </ul>
             </nav>
         </header>
-        <main>
-          
-            <!-- Grid Content -->
-            <section class="main-content grainy-bg">
-                <div class="grid-container">
-                        <h2>Modern Web Design With</h2>
-                        <h2>CSS Grid Layouts</h2>
-                    <div class="feature-projects">
-                        <h3>Featured Projects:</h3>
-                        <ul class="project-list">
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                        </ul>
+        <main class="grainy-bg">
+            <div class="form-container">
+                <h2>Got an Interesting Project? I would love to help you</h2>
+                <form action="#" name="contact-form" id="contact-form" class="contact-form">
+                    <div class="form-control">
+                        <label for="fName">First Name:</label>
+                        <input type="text" name="fName" required>
                     </div>
-                    <b class="line"></b>
-                    <a class="gallery-link" href="gallery.html">Gallery</a>
-                    <div class="preview-image">
-                        <img src="img/nyc-fog.jpg" alt="nyc-fog">
+                    <div class="form-control">
+                        <label for="lName">Last Name:</label>
+                        <input type="text" name="lName" required>
                     </div>
-                </div>
-            </section>
+                    <div class="form-control">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" name="phone">
+                    </div>
+                    <div class="form-control">
+                        <label for="fName">Email:</label>
+                        <input type="email" name="email" >
+                    </div>
+                    <div class="form-control">
+                        <label for="projectDesc">Project Description:</label>
+                        <textarea name="projectDesc" id="projectDesc" cols="30" rows="10" disabled></textarea>
+                    </div>
+                    <div class="form-control">
+                        <input type="submit" name="submit" value="Say Hello">
+                    </div>
+                </form>
+            </div>
         </main>
         <footer>
             <p>Copyright &copy; 2021 Illure Design | All Rights Reserved</p>
@@ -95,6 +100,6 @@
         </footer>
     </div>
     <!-- Header and Site Navigation -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" charset="UTF-8"></script>
 </body> 
 </html>
