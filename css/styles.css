@@ -296,7 +296,7 @@ footer {
 .social-media-menu {
     padding-top: 0.5rem;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .icon {
