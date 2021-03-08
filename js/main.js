@@ -1,5 +1,4 @@
-import AOS from 'aos';
-AOS.init();
+
 window.addEventListener('load', function(e){
 
   
@@ -20,6 +19,27 @@ window.addEventListener('load', function(e){
         menuOpen = false;
       }
   })
+
+  // feature image toggle
+
+ imgDisplay = document.querySelector('.preview');
+
+ console.log(imgDisplay)
+
+ document.querySelectorAll('#feature-link')
+  .forEach(item => {
+
+    item.addEventListener('mouseenter', (e) => {
+
+      if (item.textContent == "J Fitness and Training"){
+            imgDisplay.src = "/img/jft-preview.jpg"
+      } else if (item.textContent == "Treasure Island UI Project"){
+        imgDisplay.src = "/img/ti-preview.jpg"
+      }
+    })
+
+  })
+
 
   // Project Page Templates
 

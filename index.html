@@ -47,17 +47,14 @@
                     <div class="feature-projects">
                         <h3>Featured Projects:</h3>
                         <ul class="project-list">
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
-                            <li><a href="#">Project</a></li>
+                            <li id="feature-link"><a href="https://www.jfitnessandtraining.net/" target="_blank">J Fitness and Training</a></li>
+                            <li id="feature-link"><a href="https://jjohnston-ti.netlify.app/" target="_blank">Treasure Island UI Project</a></li>
                         </ul>
                     </div>
                     <b class="line"></b>
                     <a class="gallery-link" href="gallery.html">Image Gallery</a>
                     <div class="preview-image">
-                        <img src="img/nyc-fog.jpg" alt="nyc-fog">
+                        <img class="preview" src="https://via.placeholder.com/350x250?text=." alt="Placeholder Image" >
                     </div>
                 </div>
             </section>
@@ -93,5 +90,13 @@
     </div>
     <!-- Header and Site Navigation -->
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+          delay: 200,
+          duration: 1200,
+          once: false
+        })
+      </script>
 </body> 
 </html>
