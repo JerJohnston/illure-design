@@ -1,0 +1,9 @@
+{
+    "name": "J Fitness and Training",
+    "build": "Tailwind CSS",
+    "start": "Nov 21st 2020",
+    "completed": "Nov 24th 2020",
+    "website": "https://www.jfitnessandtraining.net/",
+    "description": "A landing page for J Fitness, a personal trainer from Edmonton AB, the site was built using the CSS framework Tailwind CSS and deployed to Netlify.",
+    "img": "img/jft-preview.jpg"
+}

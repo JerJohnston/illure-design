@@ -1,5 +1,8 @@
+import AOS from 'aos';
+AOS.init();
 window.addEventListener('load', function(e){
 
+  
   // nav menu toggle icon 
 
   const menuToggle = document.querySelector('.nav-toggle');
@@ -20,73 +23,108 @@ window.addEventListener('load', function(e){
 
   // Project Page Templates
 
-  // Reference Variables
+  document.querySelectorAll('.project-link')
+  .forEach(item => {  
+      item.addEventListener('click', (e) => { 
 
-  let projectArray = [];
-  let projectToggle = document.querySelector('.project-toggle');
+        const content = document.querySelector('.project-container')
+        const wrapper = document.querySelector('.template-wrapper');
 
-  const projects = fetch("/js/json/projects.json")
-    .then((response) => response.json());
+        if (item.textContent == 'J Fitness and Training'){
 
-  
+          if (wrapper !== null ){
+            content.removeChild(wrapper);
+          }
+          
+          
+          fetch("/js/json/jft.json")
+          .then((response) => response.json())
+          .then((data) => {
+                dataObj = data;
 
-  projects.then((data) => {
+                const projectTemplate = `
+                    <div class="template-wrapper">
+                      <h2 class="project-header">${data.name}</h2>
+                      <div class="details-view">
+                          <div class="project-details">
+                              <h4>Build :</h4>
+                              <p>${data.build}</p>
+                          </div>
+                          <div class="project-details">
+                              <h4>Started :</h4>
+                              <p>${data.start}</p>
+                          </div>
+                          <div class="project-details">
+                              <h4>Completed :</h4>
+                              <p>${data.completed}</p>
+                          </div>
+                      </div>
+                      <div class="project-description">
+                          <div class="project-url">
+                              <p>Project Homepage :</p>
+                              <a href="${data.website}">${data.website}</a>
+                          </div>
+                          <p>${data.description}</p>
+                      </div>
+                      <div class="img-container"><a href="${data.url}"><img src="${data.img}" alt="Preview Image for J Fitness and Training"></a></div>
+                    </div>
+                `
 
-    projectArray = [...data];
+                const displayProfile = document
+                        .createRange()
+                        .createContextualFragment(projectTemplate);
+                content.appendChild(displayProfile);
+              }).catch(error => console.log(error));
+        } else if (item.textContent == 'Treasure Island UI Project'){
+          
+         
+          if (wrapper !== null ){
+            content.removeChild(wrapper);
+          } 
 
-  })
+          fetch("/js/json/ti.json")
+          .then((response) => response.json())
+          .then((data) => {
+                dataObj = data;
 
-  // adding the project list to the DOM
+                const projectTemplate = `
+                    <h2 class="project-header">${data.name}</h2>
+                    <div class="details-view">
+                        <div class="project-details">
+                            <h4>Build :</h4>
+                            <p>${data.build}</p>
+                        </div>
+                        <div class="project-details">
+                            <h4>Started :</h4>
+                            <p>${data.start}</p>
+                        </div>
+                        <div class="project-details">
+                            <h4>Completed :</h4>
+                            <p>${data.completed}</p>
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <div class="project-url">
+                            <p>Project Homepage :</p>
+                            <a href="${data.website}">${data.website}</a>
+                        </div>
+                        <p>${data.description}</p>
+                    </div>
+                    <div class="img-container"><a href="${data.url}"><img src="${data.img}" alt="Preview Image for Treasure Island UI Page"></a></div>
+                `
 
-  projectToggle.addEventListener('click', (e) => {
+                const displayProfile = document
+                        .createRange()
+                        .createContextualFragment(projectTemplate);
+                content.appendChild(displayProfile);
+              }).catch(error => console.log(error));
+        }
 
-    const projectListContent = document.querySelector('.project-list');
-  
-    const projectListTemplate = `
-      <div class="project-list>
-           <ul class="projects">
-
-           </ul>
-        </div>
-    `
-
-    const displayProjectList = document
-      .createRange()
-      .createContextualFragment(projectListTemplate);
-
-    projectListContent.appendChild(displayProjectList);
-
-  
-  
-    projectArray.map(function (value, index) {
-       const id = value.id;
-       const name = value.name;
-        const projectMenu = document.querySelector('.project-list')
+      });
+    
+    
+    });
+                        
       
-        const projectListTemplate = `
-        <ul class="project-list">
-           <li class="project-item">
-                <a href="#" class="project-link" data-id="${id}">${name}</a>
-            </li>
-         </ul>
-       `
-
-        const projectList = document
-           .createRange()
-           .createContextualFragment(projectListTemplate)
-           .querySelector('.project-item');
-
-         projectMenu.appendChild(projectList);
-      
-     })
-
-     document.querySelectorAll('.project-link')
-                .forEach(project => {
-                    project.addEventListener('click', (e) => {
-
-                      
-                    })
-                })
-  })
 
 })

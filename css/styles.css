@@ -546,6 +546,10 @@ input[type="submit"]:focus{
     line-height: 1.25;
 }
 
+.project-link {
+    cursor: pointer;
+}
+
 .img-container {
     max-width: 40rem;
     box-shadow: 2px 2px 6px #252525;

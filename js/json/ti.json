@@ -1,0 +1,9 @@
+{
+    "name": "Treasure Island Summary",
+    "build": "HTML5 CSS3",
+    "start": "Oct 17th 2020",
+    "completed": "Oct 18th 2020",
+    "url": "https://jjohnston-ti.netlify.app/",
+    "desc": "A one page website demonstrating modern UI principles and modern CSS techniques, the site was designed to give the feel of the novel but uses CSS box-shadow, text-shadow and some animation effects to give it a more modern look",
+    "img": "img/ti-preview.jpg"
+}
