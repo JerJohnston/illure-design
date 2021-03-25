@@ -326,6 +326,10 @@ footer {
 
 /* Contact Page */
 
+.hidden {
+    display: none;
+}
+
 .form-container {
     padding: 1rem;
     padding-bottom: 4rem;
