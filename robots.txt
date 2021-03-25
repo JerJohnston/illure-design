@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: /contact
+Sitemap: https://www.illure-design.com/sitemap.xml
